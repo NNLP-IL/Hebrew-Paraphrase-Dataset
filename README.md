@@ -27,6 +27,5 @@ To ensure high quality, we applied several automatic filtering procedures:
 Each instance in the dataset includes:
 - **Original Text:** The source text.
 - **Paraphrase:** A generated paraphrase of the original text.
-- **Source:** Genre/Source (For Example: Wikipedia).
 - **Type:** sentence/paragrph.
 - **Gold:** indicate whether the instance is part of the gold-standard subset.

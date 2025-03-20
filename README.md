@@ -1,18 +1,22 @@
-# Hebrew-Paraphrase-Dataset
-This repository contains a paraphrase dataset in Hebrew, consisting of 9,750 instances. The dataset includes both paragraph-level and sentence-level paraphrases, generated with the help of a large language model (LLM).
+# Hebrew Paraphrase Dataset
+
+This repository contains a high-quality paraphrase dataset in Hebrew, consisting of **9785 instances**. The dataset includes both paragraph-level (75%) and sentence-level (25%) paraphrases generated with the help of a large language model. Among these, **300 instances** have been manually validated as gold standard examples.
+
+## What Is a Paraphrase?
+
+A *paraphrase* is a restatement of a text using different words and structures while preserving the original meaning. 
 
 ## Dataset Overview
 
-- **Total Instances:** 9,750
-- **Structure:** 
-  - **75%** are paragraphs (7,313 instances)
-  - **25%** are sentences (2,438 instances)
-- **Genres/Sources:** The dataset covers a variety of text types:
-  1. **Wikipedia** – Encyclopedic texts
-  2. **Geektime** – Technological-news texts
-  3. **Knesset** – Spoken language, dialogue, and protocol texts
-  4. **Kol Zchut** – Legal language texts
-  5. **Summaries** – Summeries from various sources
+Our dataset is designed to cover a wide range of text genres. It includes material from various domains such as encyclopedic entries, legal and conversational texts, news, and more.
+
+## Automatic Quality Control
+
+To ensure high quality, we applied several automatic filtering procedures:
+- **Language Consistency:** We removed any paraphrases containing code switching to a language other than Hebrew.
+- **Length Requirements:** Very short paraphrases relative to the original text were filtered out.
+- **Generation Failures:** Instances where the model refused or failed to generate a paraphrase were excluded.
+- **Similarity Check:** Paraphrases that were too similar to their source texts — thus not providing true rewording — were also removed.
 
 ## Gold-Standard Subset
 
@@ -20,10 +24,9 @@ This repository contains a paraphrase dataset in Hebrew, consisting of 9,750 ins
 
 ## Data Format
 
-Each instance in the dataset typically contains:
+Each instance in the dataset includes:
 - **Original Text:** The source text.
 - **Paraphrase:** A generated paraphrase of the original text.
 - **Source:** Genre/Source (For Example: Wikipedia).
 - **Type:** sentence/paragrph.
 - **Gold:** indicate whether the instance is part of the gold-standard subset.
-
